@@ -1,0 +1,16 @@
+CONSULTA CONTAS A PAGAR (CNPJ/CPF)
+
+1. Instale o Python 3.9+ (python.org) marcando "Add to PATH".
+2. Dê dois cliques em iniciar.bat. O navegador abre em http://127.0.0.1:5001
+   (pode rodar junto com o app de contas a receber, que usa a porta 5000)
+3. No rodapé, escolha o arquivo (.csv ou .xlsx) e clique em "Importar / atualizar
+   arquivo". Os dados ficam em contas_pagar.db; só importe de novo quando houver
+   arquivo novo.
+4. Escolha CNPJ ou CPF, digite o número, filtre a situação e/ou o período de
+   vencimento. O painel e a lista de linhas são atualizados; clique numa linha para
+   o painel mostrar só ela (Ctrl+clique ou caixas para várias).
+
+PAINEL: Total de Parcelas, Total Original (Valor Original), Total Saldo (Valor
+Saldo), Primeiro e Último Vencimento (coluna "Vcto Saldo").
+Filtro de período: Vcto Saldo. Filtro de situação: valores da coluna Situação.
+Linhas sem CNPJ/CPF no arquivo não podem ser pesquisadas e não são importadas.

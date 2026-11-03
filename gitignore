@@ -1,0 +1,12 @@
+# Dados reais do ERP: nunca versionar
+*.db
+*.csv
+*.xlsx
+*.xlsm
+_uploads/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/

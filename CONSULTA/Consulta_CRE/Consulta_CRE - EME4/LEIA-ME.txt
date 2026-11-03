@@ -1,0 +1,24 @@
+CONSULTA DE PARCELAS (CPF/CNPJ)
+
+1. Instale o Python 3.9+ (python.org) marcando "Add to PATH".
+2. Dê dois cliques em iniciar.bat. O navegador abre em http://127.0.0.1:5000
+   (Linux/Mac: pip install -r requirements.txt && python3 app.py)
+3. (Versão 4: reimporte a planilha uma vez para trazer as colunas novas.) Na parte de baixo da tela, escolha a planilha (.xlsx ou .csv) e clique em
+   "Importar / atualizar planilha". Os dados ficam em parcelas.db e não é
+   preciso importar de novo, só quando houver planilha nova.
+4. Escolha CPF ou CNPJ, digite o número e consulte. Abaixo do painel aparece a lista das parcelas do período; clique numa ou mais linhas e o painel passa a mostrar só as selecionadas (clique de novo para desmarcar).
+
+COLUNAS USADAS (as demais são ignoradas)
+ CNPJ / CPF, Data Vencimento, Valor Original, Valor Saldo, Valor Total Recebido,
+ Juros Calculado, Multa Calculada, Situação, Nº Documento, Parcela.
+
+REGRAS
+ Qtde / Primeiro / Último vencimento: parcelas do filtro; Total Original e
+   Total Saldo: soma de Valor Original e Valor Saldo.
+ Situação (Liquidado, Cancelado, Renegociado; qualquer outra = Em aberto).
+ Total Liquidado: Valor Total Recebido (se vier preenchido) senão Valor Original
+   das parcelas liquidadas.
+ Total Cancelado / Renegociado: Valor Original das parcelas nessa situação.
+ Juros, Multa e Total a Receber: só parcelas em aberto.
+   Total a Receber = Valor Saldo + Juros + Multa.
+ Filtro por período: Data Vencimento.
